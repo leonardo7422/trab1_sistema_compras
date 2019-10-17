@@ -11,12 +11,16 @@
 	include("conexao.php");
 
 
-    $select = "SELECT ID_CIDADE AS value, NOME_CIDADE AS texto FROM cidade ORDER BY NOME_CIDADE";
+    $select = "SELECT FORNECEDOR.ID_CIDADE AS value, NOME_CIDADE AS texto FROM cidade, fornecedor WHERE FORNECEDOR.ID_CIDADE = CIDADE.ID_CIDADE";
 
 	$stmt = $conexao->prepare($select);
-    $stmt->execute();
+	$stmt->execute();
+
+	while($linha=$stmt->fetch()){
+		$matriz[] = $linha;
+	}	
     
-	$v = array("action"=>"insere.php?tabela=produto","method"=>"post");
+	$v = array("action"=>"insere.php?tabela=loja","method"=>"post");
     $f = new Form($v);
     
 	$v = array("type"=>"number","name"=>"ID_LOJA","placeholder"=>"ID DA LOJA...");

@@ -13,18 +13,23 @@
 	include("conexao.php");
 	
 	
-    $select = "SELECT ID_CIDADE AS value, NOME_CIDADE AS texto FROM cidade ORDER BY NOME_CIDADE";
+    $select = "SELECT ID_ESTADO AS value, SIGLA AS texto FROM estado ORDER BY SIGLA";
 
 	$stmt = $conexao->prepare($select);
-    $stmt->execute();
+	$stmt->execute();
+	
+	while($linha=$stmt->fetch()){
+		$matriz[] = $linha;
+	}	
+
     
 	$v = array("action"=>"insere.php?tabela=cidade","method"=>"post");
 	$f = new Form($v);
 	
-	$v = array("type"=>"text","name"=>"ID_CIDADE","placeholder"=>"ID DA CIDADE...");
+	$v = array("type"=>"number","name"=>"ID_CIDADE","placeholder"=>"ID DA CIDADE...");
 	$f->add_input($v);
 
-	$v = array("type"=>"number","name"=>"NOME_CIDADE","placeholder"=>"NOME DA CIDADE...");
+	$v = array("type"=>"text","name"=>"NOME_CIDADE","placeholder"=>"NOME DA CIDADE...");
 	$f->add_input($v);
 	
 

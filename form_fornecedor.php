@@ -17,14 +17,18 @@
 	$stmt = $conexao->prepare($select);
 	$stmt->execute();
 
+	while($linha=$stmt->fetch()){
+		$matriz[] = $linha;
+	}	
+
 	$v = array("action"=>"insere.php?tabela=fornecedor","method"=>"post");
 	$f = new Form($v);
 	
-	$v = array("type"=>"text","name"=>"ID_FORNECEDOR","placeholder"=>"ID DO FORNECEDOR...");
+	$v = array("type"=>"number","name"=>"ID_FORNECEDOR","placeholder"=>"ID DO FORNECEDOR...");
 	$f->add_input($v);
 	$v = array("type"=>"text","name"=>"RAZAO_SOCIAL","placeholder"=>"RAZÃO SOCIAL...");
 	$f->add_input($v);
-	$v = array("type"=>"number","name"=>"NOME_FANTASIA","placeholder"=>"NOME FANTASIA...");
+	$v = array("type"=>"text","name"=>"NOME_FANTASIA","placeholder"=>"NOME FANTASIA...");
 	$f->add_input($v);
 
 	$v = array("name"=>"ID_CIDADE");

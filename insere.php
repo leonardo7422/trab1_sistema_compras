@@ -11,8 +11,6 @@ if(!empty($_POST)){
 	
 	$c = new ControllerBD($conexao);
 	$c->inserir($_POST,$_GET["tabela"]);
-
-	$str = strtolower($_POST["tabela"]);
 	
 }
 else{

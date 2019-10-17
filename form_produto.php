@@ -15,7 +15,7 @@
 	$f->add_input($v);
 	$v = array("type"=>"text","name"=>"DESCRICAO","placeholder"=>"DESCRIÇÃO DO PRODUTO...");
 	$f->add_input($v);
-	$v = array("type"=>"text","name"=>"PRECO_UNITARIO","placeholder"=>"PREÇO UNITÁRIO DO PRODUTO...");
+	$v = array("type"=>"number","name"=>"PRECO_UNITARIO","placeholder"=>"PREÇO UNITÁRIO DO PRODUTO...");
 	$f->add_input($v);
 	$v = array("type"=>"SUBMIT","name"=>"ENVIAR");
 	$f->add_input($v);	

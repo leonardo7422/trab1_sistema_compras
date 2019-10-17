@@ -17,10 +17,14 @@
 	$stmt = $conexao->prepare($select);
 	$stmt->execute();
 
+	while($linha=$stmt->fetch()){
+		$matriz[] = $linha;
+	}	
+
 	$v = array("action"=>"insere.php?tabela=estado","method"=>"post");
 	$f = new Form($v);
 	
-	$v = array("type"=>"text","name"=>"ID_FORNECEDOR","placeholder"=>"ID DO ESTADO...");
+	$v = array("type"=>"number","name"=>"ID_FORNECEDOR","placeholder"=>"ID DO ESTADO...");
 	$f->add_input($v);
 	$v = array("type"=>"text","name"=>"RAZAO_SOCIAL","placeholder"=>"NOME DO ESTADO...");
 	$f->add_input($v);

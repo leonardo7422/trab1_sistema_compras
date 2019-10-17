@@ -11,9 +11,11 @@ if(!empty($_POST)){
 	
 	$c = new ControllerBD($conexao);
 	$c->inserir($_POST,$_GET["tabela"]);
+
+	$str = strtolower($_POST["tabela"]);
 	
 }
 else{
-	header("location: form.php?tabela=fornecedor");
+	header("location: form_fornecedor.php");
 }
 ?>

@@ -28,7 +28,7 @@
 				<td>".$linha["SIGLA"]."</td>
 				<td>
 					<form method='post' action='remover.php'>
-						<input type='hidden' name='tabela' value='fornecedor' />
+						<input type='hidden' name='tabela' value='estado' />
 						<input type='hidden' name='id' 
 							value='".$linha["ID_ESTADO"]."' />
 						<button>Remover</button>

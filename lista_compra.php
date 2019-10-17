@@ -34,7 +34,7 @@
 				<td>".$linha["PRECO_UNITARIO"]."</td>		
 				<td>
 				<form method='post' action='remover.php'>
-				<input type='hidden' name='tabela' value='fornecedor' />
+				<input type='hidden' name='tabela' value='compra' />
 				<input type='hidden' name='id' 
 					value='".$linha["ID_COMPRA"]."' />
 				<button>Remover</button>
